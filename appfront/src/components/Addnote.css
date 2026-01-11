@@ -1,0 +1,49 @@
+#fullpage{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addnote{
+    background-color: white;
+    height: 52vh;
+    width: 28vw;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    gap:1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+#addnote-header{
+    background-color: white;
+    height: 15%;
+    width: 100%;
+    font-size: x-large;
+}
+#addnote-header button{
+    margin-left: 0.5rem;
+    border: none;
+    font-size: medium;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 1.3rem;
+    width: 1rem;
+}
+#title,#content{
+    width: 25vw;
+    height: 2rem;
+    padding: 0.2rem;
+    background-color:rgba(0, 0, 0, 0.04);
+    font-size: 1rem;
+    border: none;
+}
+#content{
+    height: 6rem;
+}
+.label{
+    font-size: large;
+}
+.save{
+    margin-left:0 ;
+}
