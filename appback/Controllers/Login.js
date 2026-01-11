@@ -24,7 +24,7 @@ exports.Login=async(req,res)=>{
                 success:false,
             })
         }
-        const options={httpOnly:true,sameSite:'strict',secure:true,maxAge:7*24*60*60*1000};
+        const options={httpOnly:true,sameSite:'None',secure:true,maxAge:7*24*60*60*1000};
         const secret=process.env.JWT_SECRET;
         const payload={email:email,id:user._id};
         const token=jwt.sign(payload,secret,{expiresIn:'7d'});
