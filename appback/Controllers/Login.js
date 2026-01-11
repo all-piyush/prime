@@ -24,7 +24,7 @@ exports.Login=async(req,res)=>{
                 success:false,
             })
         }
-        const options={httpOnly:true,sameSite:'lax',secure:false,maxAge:7*24*60*60*1000};
+        const options={httpOnly:true,sameSite:'none',secure:true,maxAge:7*24*60*60*1000};
         const secret=process.env.JWT_SECRET;
         const payload={email:email,id:user._id};
         const token=jwt.sign(payload,secret,{expiresIn:'7d'});
@@ -60,7 +60,7 @@ exports.Signup=async(req,res)=>{
         }
         const hashedpassword=await bcrypt.hash(password,10);
         const newuser=await userschema.create({name:name,email:email,password:hashedpassword});
-        const options={httpOnly:true,sameSite:'lax',secure:false,maxAge:7*24*60*60*1000};
+        const options={httpOnly:true,sameSite:'none',secure:true,maxAge:7*24*60*60*1000};
         const secret=process.env.JWT_SECRET;
         const payload={name:name,email:email,id:newuser._id};
         const token=jwt.sign(payload,secret,{expiresIn:'7d'});
@@ -96,7 +96,7 @@ exports.googlelogin=async(req,res)=>{
         }
         if(!user){
          user=await userschema.create({name:name,email:email,googleid:googleid});}
-        const options={httpOnly:true,sameSite:'lax',secure:false,maxAge:7*24*60*60*1000};
+        const options={httpOnly:true,sameSite:'none',secure:true,maxAge:7*24*60*60*1000};
         const secret=process.env.JWT_SECRET;
         const payload={name:name,email:email,id:user._id};
         const token=jwt.sign(payload,secret,{expiresIn:'7d'});

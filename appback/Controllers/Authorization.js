@@ -23,8 +23,7 @@ exports.checkauth=async(req,res)=>{
 }
 exports.logout=async(req,res)=>{
     try{
-        
-        const options={httpOnly:true,sameSite:'lax',secure:false,maxAge:0};
+        const options={httpOnly:true,sameSite:'none',secure:true,maxAge:0};
         res.cookie("token","",options);
         return res.status(200).json({
             message:"cookie removed successfully",
