@@ -11,10 +11,10 @@
 }
 
 #login-form,#signup-form{
-    padding: 2rem;
+    padding: 2vw;
     background-color: #FFFFFF;
-    min-height:10%;
-    min-width: 20%;
+    min-height:10vh;
+    min-width: 20vw;
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -48,4 +48,15 @@
     border: none;
     font-size:medium;
     cursor: pointer;
+}
+@media screen  and (max-width:600px){
+    .name,.password,.email{
+    width: 16rem;
+    }
+    #googlelogin{
+        width: 16rem;
+    }
+    #login-button,#signup-button{
+    width: 16rem;
+    }
 }

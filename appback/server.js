@@ -5,7 +5,7 @@ const app = express();
 
 app.use(cookieParser());
 app.use(cors({
-  origin:'https://prime-4fht.onrender.com',credentials:true}
+  origin:['http://localhost:3000',"https://prime-4fht.onrender.com/"],credentials:true}
 ));
 app.use(express.json());
 app.get('/', (req, res) => {

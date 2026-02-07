@@ -4,7 +4,8 @@
     background-color: navy;
     color: white;
     justify-content: space-between;
-    padding: 0.3rem 2rem;
+    align-items: center;
+    padding: 0 1% 0 1%;
 }
 #header{
     font-size: x-large;

@@ -3,6 +3,7 @@ const jwt=require('jsonwebtoken');
 const bcrypt=require('bcrypt');
 exports.Login=async(req,res)=>{
     try{
+        console.log("yes");
         const {email,password}=req.body;
         if(!email || !password){
             return res.status(400).json({
@@ -28,7 +29,7 @@ exports.Login=async(req,res)=>{
         const secret=process.env.JWT_SECRET;
         const payload={email:email,id:user._id};
         const token=jwt.sign(payload,secret,{expiresIn:'7d'});
-        
+        console.log(token);
         res.cookie('token',token,options);
         return res.status(200).json({
             message:"user logged in successfully",
